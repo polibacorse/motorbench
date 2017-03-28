@@ -13,6 +13,10 @@ The software is written in C (for Arduino) and Python (Front-end).
 The front-end uses matplotlib to provide plotting functionality and uses
 numpy for high performance memory management.
 
+Cables got lost? Need to start from scratch? Please read the
+[wiki](https://github.com/polibacorse/motorbench/wiki/Cables-configuration)
+to see the configuration.
+
 ## System requirements
 
 The software was designed and tested with Python 3.6. To install the required
