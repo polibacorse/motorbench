@@ -1,10 +1,10 @@
 # Motorbench
-### Copyright (c) Poliba Corse
 
 ## What is Motorbench?
-Motorbench helps test motors using sensors such as the encoder, the flow and
-the pressure. The last two sensors are expressed in function of the encoder
-behaviour and are displayed on an animated plot.
+Motorbench helps engineers test motors using sensors such as the encoder,
+the flow and the pressure.
+The last two sensors are expressed in function of the encoder behaviour and are
+displayed on an animated plot.
 
 ## Technical details
 Encoder is expressed in degrees, flow in kg/h and pressure in kPa.
@@ -36,16 +36,12 @@ Just plug Arduino on the USB port and do
 $ python motorbench.py
 ```
 
-_NOTE_: if the script doesn't see the Arduino, just override the hardcoded
-string placed under `serial.Serial(...)` function.
-
-Remember to check the sketch to see how the connectors should be placed on the
-Arduino (should be `COMn` where n is an integer on Windows;
-`/dev/tty.usbmodemNNNN` on BSD/Linux).
+_NOTE_: if the script doesn't see the Arduino, just replace vid and pid codes at
+`motorbench.py`.
 
 When you have enough data, press `CTRL+C` on the terminal to stop the program;
 it will automatically generate 2 CSV files, one for the flow and one for the
-pressure. `nan` values should be ignored.
+pressure. `nan` values should be treated as values not acquired.
 
 ## TODO list
 
@@ -57,16 +53,3 @@ pressure. `nan` values should be ignored.
 ## Known bugs
 
 - Memory leak of ~100 kB every 30 s. This can cause instability and saturation.
-
-## Authors / Mantainers
-
-Giovanni Grieco <giovanni.grc96@gmail.com>
-
--Unknown Author-
-
-## Changelog
-
-Version 0.9 (13/03/2017)
-- First documented version
-- Front-end rewritten from scratch in Python
-- Arduino code was refactored and cleaned
